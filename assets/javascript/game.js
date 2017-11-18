@@ -4,16 +4,18 @@ var wins = 0;
 var losses = 0;
 var guessesLeft = 9;
 var guessesSoFar = [];
+var computerChoice = letters[Math.floor(Math.random() * letters.length)];
 
 function resetScore(){
 	guessesLeft = 9;
 	guessesSoFar = [];
+	computerChoice = letters[Math.floor(Math.random() * letters.length)];
 }
 
 document.onkeyup = function(event) {
 
 	var userGuess = (event.key).toLowerCase()
-	var computerChoice = letters[Math.floor(Math.random() * letters.length)];
+	
 	console.log(`Random number: ${computerChoice} Guessed number ${userGuess}`);
 
 		if (userGuess === computerChoice) {
